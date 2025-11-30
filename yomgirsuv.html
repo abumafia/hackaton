@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suv Saqlash va Baliq Yetishtirish Loyihasi: Batafsil Tahlil va Takliflar</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Animate.css CDN for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .header h1 {
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: fadeInDown 1s ease-out;
+        }
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section h2 {
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: fadeInLeft 1s ease-out;
+        }
+        .section h3 {
+            color: #0056b3;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card {
+            background: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .table {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .table th {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+        }
+        .table td {
+            border-color: #eee;
+            padding: 10px;
+        }
+        .highlight {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .placeholder-img {
+            width: 100%;
+            height: 250px;
+            background-color: #ddd;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin: 25px 0;
+            animation: pulse 2s infinite;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            margin: 10px 5px 0 0;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #007bff;
+        }
+        .accordion-button {
+            font-weight: 600;
+        }
+        .accordion-body {
+            padding: 20px;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .long-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        .infobox {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-water"></i> Yog'ingarchilik suvlarini to'plash va Bandlash (Kam ta'minlanganlar va Yoshlar uchun o'z-o'zini band qilish loyihasi) Loyihasi</h1>
+            <p>Batafsil Tahlil: Yomg'ir Suvlarini Samarali Boshqarish, Baliqchilik va Iqtisodiy Foydalar</p>
+            <p class="mt-3">Asosiy Manba: 1 km Asfalt Yo'l (Eni 10 m), Yillik 20 sm Yog'ingarchilik</p>
+        </div>
+    </header>
+
+    <!-- Kirish Bo'limi -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-home"></i> Kirish: Loyihaning Umumiy Tasviri</h2>
+                    <div class="card">
+                        <div class="long-text">
+                            <p>O'zbekiston kabi quruq iqlimli mamlakatlarda suv resurslarini samarali boshqarish masalasi kun kun dolzarb bo'lib bormoqda. Iqlim o'zgarishi natijasida yillik yog'ingarchilik miqdori o'zgaruvchan bo'lib, qurg'oqchilik davrlari ko'paymoqda. BMTning Atrof-Muhit Dasturi (UNEP) ma'lumotlariga ko'ra, O'zbekistonda so'nggi 60 yilda o'rtacha harorat 1.6°C ga oshgan bo'lib, bu global o'rtachadan 3 baravar yuqori. Bu esa suv tanqisligini kuchaytirmoqda va qishloq xo'jaligi, shahar infratuzilmasi va aholi ta'minotiga salbiy ta'sir ko'rsatmoqda.</p>
+                            <p>Ushbu loyiha yomg'ir va qor erish suvlarini yo'l chetlarida to'planishiga yo'l qo'ymasdan, markaziy hovuzlarga yo'naltirishni taklif etadi. Har 1 km da joylashgan hovuzlarda suv saqlanib, unda baliq yetishtiriladi. Bu nafaqat suvni tejaydi, balki kam ta'minlangan aholi uchun ish o'rinlarini yaratadi, yozda daraxtlarni tomchilatib sug'orish, fermerlarga suv sotish va tozalangan suvni ichimlik sifatida sotish orqali ko'p qirrali daromad manbai bo'ladi.</p>
+                            <p>Asosiy hisob: 1 km asfalt yo'l (eni 10 m) yuzasidan yillik 20 sm (0.2 m) yog'ingarchilik yig'iladi. Suv miqdori = 1 km × 10 m × 0.2 m = 2000 m³ (taxminan). Bu suvning 50% ini hovuzda saqlash, 30% ni sug'orish, 10% ni baliqchilik va 10% ni sotishga ajratish mumkin. Loyiha O'zbekistonning quruq hududlari (masalan, Toshkent viloyati, Farg'ona vodiysi) uchun mo'ljallangan.</p>
+                            <div class="infobox">
+                                <strong>Eslatma:</strong> O'zbekistonda o'rtacha yillik yog'ingarchilik 200-230 mm (20-23 sm) ni tashkil etadi (Trading Economics, 2022). Iqlim o'zgarishi tufayli bu ko'rsatkich 2025 yilda ham o'xshash bo'lishi kutilmoqda.
+                            </div>
+                        </div>
+                        <!-- Placeholder for Image -->
+                        <div class="placeholder-img">
+                            <i class="fas fa-image" style="font-size: 2.5rem;"></i> Loyiha Umumiy Shemasi (O'zingiz joylashtiring)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suv Manbai Bo'limi -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-cloud-rain"></i> Suv Manbai: Yomg'ir va Qor Erishi Suvlari</h2>
+                    <div class="card">
+                        <h3><i class="fas fa-calculator"></i> Hisob-Kitob: 1 km Yo'l Uchun Suv Yig'ish</h3>
+                        <div class="long-text">
+                            <p>Yo'l yuzasi: Uzunlik = 1000 m, En = 10 m, Umumiy maydon = 10,000 m².</p>
+                            <p>Yillik yog'ingarchilik: 20 sm = 0.2 m.</p>
+                            <p>Yig'iladigan suv: 10,000 m² × 0.2 m = 2,000 m³ (taxminan 2 million litr).</p>
+                            <p>Bu miqdor O'zbekistonning o'rtacha ko'rsatkichiga mos keladi: Toshkentda yillik 300-400 mm, lekin quruq yillarda 200 mm ga tushadi (Weather Spark ma'lumotlari). Qor erishi qishda qo'shimcha 20-30% suv beradi.</p>
+                            <p>Suvni yig'ish tizimi: Yo'l chetlariga drenaj kanallari o'rnatiladi, suv markaziy hovuzga (hajmi 1,500 m³) yo'naltiriladi. Yo'qotishlar (bug'lanish, kirish) 20-30% ni tashkil etadi, shuning uchun sof saqlanadigan suv ~1,400-1,600 m³.</p>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Parametr</th>
+                                    <th>Qiymat</th>
+                                    <th>Izoh</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Yo'l uzunligi</td><td>1,000 m</td><td>Asfalt yo'l</td></tr>
+                                <tr><td>Yo'l eni</td><td>10 m</td><td>Standart en</td></tr>
+                                <tr><td>Maydon</td><td>10,000 m²</td><td>Hisoblangan</td></tr>
+                                <tr><td>Yog'ingarchilik</td><td>0.2 m/yil</td><td>O'rtacha 2025</td></tr>
+                                <tr><td>Yig'iladigan suv</td><td>2,000 m³</td><td>Gross</td></tr>
+                                <tr><td>Sof saqlanadigan</td><td>1,500 m³</td><td>Yo'qotishlar bilan</td></tr>
+                            </tbody>
+                        </table>
+                        <h3><i class="fas fa-map-marker-alt"></i> Mintaqaviy Farqlar</h3>
+                        <div class="long-text">
+                            <p>O'zbekistonning turli hududlarida yog'ingarchilik farq qiladi: Farg'ona vodiysida 300-500 mm, Qoraqalpog'istonda 100-150 mm. Loyiha quruq hududlarga (masalan, Navoiy viloyati) moslashtirilishi mumkin, unda suvni 100% yig'ish muhim.</p>
+                            <div class="infobox">
+                                <strong>Manba:</strong> UNEP Atlas (2025): O'zbekiston qurg'oqchilikdan eng yuqori 20 mamlakatdan biri.
+                            </div>
+                        </div>
+                        <!-- Placeholder for Image -->
+                        <div class="placeholder-img">
+                            <i class="fas fa-image" style="font-size: 2.5rem;"></i> Yog'ingarchilik Xaritasi (O'zingiz joylashtiring)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hovuz va Baliqchilik Bo'limi -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-fish"></i> Hovuz Tizimi va Baliq Yetishtirish</h2>
+                    <div class="card">
+                        <h3><i class="fas fa-cube"></i> Hovuz Konstruktsiyasi</h3>
+                        <div class="long-text">
+                            <p>Har 1 km da 1 ta hovuz: Hajmi 1,500 m³, Chuqurligi 2 m, Sirt maydoni 750 m². Materiallar: HDPE geomembrane liner (narxi $1.5/m²). Qazish xarajati 50,000 UZS/m³. Bu tizim suvni yil bo'yi saqlaydi, bug'lanishni 10-15% ga kamaytiradi.</p>
+                            <p>Baliqchilik: Semi-intensiv usul, zichlik 7 kg/m³. Yillik hosil: 1,125 kg (karp, silver carp). O'zbekistonda baliqchilik 198.9 ming tonna (2023), lekin suv tanqisligi muammo (FAO ma'lumotlari).</p>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Baliq Turi</th>
+                                    <th>Zichlik (kg/m³)</th>
+                                    <th>Yillik Hosil (kg)</th>
+                                    <th>Narx (UZS/kg)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Karp</td><td>5</td><td>750</td><td>40,000</td></tr>
+                                <tr><td>Silver Carp</td><td>2</td><td>375</td><td>35,000</td></tr>
+                                <tr><td>Jami</td><td>7</td><td>1,125</td><td>-</td></tr>
+                            </tbody>
+                        </table>
+                        <h3><i class="fas fa-users"></i> Bandlik Ta'minlash</h3>
+                        <div class="long-text">
+                            <p>Kam ta'minlangan aholi uchun: 5-10 ishchi (qurilish, parvarish, sotish). Yillik ish haqi: 100,000 UZS/kun. Bu loyiha 1 km uchun 50-100 oilani qo'llab-quvvatlaydi, ayollar va yoshlarni jalb qilish mumkin.</p>
+                            <div class="infobox">
+                                <strong>Foyda:</strong> O'zbekistonda baliq iste'moli WHO standartlariga yetmayapti, bu loyiha mahalliy bozorni boyitadi.
+                            </div>
+                        </div>
+                        <!-- Placeholder for Image -->
+                        <div class="placeholder-img">
+                            <i class="fas fa-image" style="font-size: 2.5rem;"></i> Baliq Hovuzi Rasmi (O'zingiz joylashtiring)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sug'orish Tizimi Bo'limi -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-tint"></i> Tomchilatib Sug'orish va Suv Sotish</h2>
+                    <div class="card">
+                        <h3><i class="fas fa-seedling"></i> Daraxtlarni Sug'orish</h3>
+                        <div class="long-text">
+                            <p>Kuz-qish-bahor suvlarini yozda ishlatish: 63 daraxt/km, har biriga 15,000 UZS drip tizim. Samaradorlik: 90% suv tejaydi (quruq hududlarda). O'zbekistonda daraxtlar uchun suv tanqisligi katta muammo.</p>
+                            <p>Foyda: Bug'lanishni kamaytiradi, hosildorlikni 20-30% oshiradi (USU Extension ma'lumotlari).</p>
+                        </div>
+                        <h3><i class="fas fa-tractor"></i> Fermerlarga Suv Sotish</h3>
+                        <div class="long-text">
+                            <p>Qolgan suv (700 m³): 2,000 UZS/m³ da sotish = 3.500.000 mln UZS (5.000.000sumdan hisoblansa) daromad. Qishloq xo'jaligida suv narxi 5,000-12,000 UZS/m³ bo'lishi mumkin.</p>
+                            <div class="infobox">
+                                <strong>Manba:</strong> Rainwater harvesting qishloq xo'jaligida 30-50% suv tejaydi (Frontiers jurnali).
+                            </div>
+                        </div>
+                        <!-- Placeholder for Image -->
+                        <div class="placeholder-img">
+                            <i class="fas fa-image" style="font-size: 2.5rem;"></i> Drip Sug'orish Tizimi (O'zingiz joylashtiring)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suv Tozalash Bo'limi -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-filter"></i> Suv Tozalash va Ichimlik Suviga Aylantirish</h2>
+                    <div class="card">
+                        <div class="long-text">
+                            <p>Baliq havzasidan oldin kichik havza orqali filtratsiya: First-flush va oddiy filtrlar (xarajat 3.5 mln UZS). 20% suv (300 m³) tozalanib, 300.000 UZS/m³ da sotiladi = 90.000.000 mln UZS.</p>
+                            <p>Samaradorlik: Biomimetik texnologiyalar (AquaTrap) suvni 95% tozalaydi. O'zbekistonda ichimlik suvi narxi oshmoqda (Daryo.uz, 2023).</p>
+                            <div class="infobox">
+                                <strong>Foyda:</strong> Aholi uchun arzon suv, sog'liqni saqlash.
+                            </div>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Bosqich</th>
+                                    <th>Xarajat (UZS)</th>
+                                    <th>Suv Miqdori (m³)</th>
+                                    <th>Daromad (UZS)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Filtr o'rnatish</td><td>3,500,000</td><td>300</td><td>-</td></tr>
+                                <tr><td>Tozalash</td><td>1.000.000 * 2/3</td><td>300</td><td>-</td></tr>
+                                <tr><td>Sotish</td><td>-</td><td>300</td><td>90.000.000 (Agar 300sum/litr sotilganda)</td></tr>
+                            </tbody>
+                        </table>
+                        <!-- Placeholder for Image -->
+                        <div class="placeholder-img">
+                            <i class="fas fa-image" style="font-size: 2.5rem;"></i> Suv Tozalash Jarayoni (O'zingiz joylashtiring)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Iqtisodiy Foydalar Bo'limi -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-chart-bar"></i> Iqtisodiy va Ekologik Foydalar</h2>
+                    <div class="card">
+                        <h3><i class="fas fa-road"></i> Asfalt Ta'mirlash Xarajatlarini Kamaytirish</h3>
+                        <div class="long-text">
+                            <p>Yomg'ir suvlari asfalt ostini yumshatib, cho'kishlarga olib keladi. O'zbekistonda yo'l ta'mirlash orqaga qolgan xarajatlari 1 mlrd USD/yil (Daryo.uz, 2023). Suvni yig'ish bu zarar 20-30% ga kamaytiradi, davlat byudjetiga foyda.</p>
+                            <p>Yo'l infratuzilmasi bozori 2020 yilda 24.8 trln UZS (ReportLinker).</p>
+                        </div>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <div class="stat-number">10 mlrd UZS</div>
+                                <div>Yillik ta'mirlash zarar</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">20-30%</div>
+                                <div>Kamayish potentsiali</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">231 mln UZS</div>
+                                <div>CAPEX (1 km)</div>
+                            </div>
+                        </div>
+                        <h3><i class="fas fa-leaf"></i> Ekologik Foydalar</h3>
+                        <div class="long-text">
+                            <p>Rainwater harvesting eroziyani kamaytiradi, yer osti suvlarini to'ldiradi. Markaziy Osiyoda bu qishloq xo'jaligini 40% yaxshilaydi (SpringerLink). Baliqchilik biologik xilma-xillikni oshiradi.</p>
+                            <div class="infobox">
+                                <strong>Manba:</strong> Roads as rainwater harvesting instruments (Springer, 2018).
+                            </div>
+                        </div>
+                        <!-- Placeholder for Image -->
+                        <div class="placeholder-img">
+                            <i class="fas fa-image" style="font-size: 2.5rem;"></i> Ekologik Foydalar Grafiki (O'zingiz joylashtiring)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mintaqaviy Misollar Bo'limi -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-globe"></i> Mintaqaviy va Xalqaro Misollar</h2>
+                    <div class="card">
+                        <div class="accordion" id="examplesAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                        O'zbekistonda Baliqchilik: Balykchi Fermasi
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#examplesAccordion">
+                                    <div class="accordion-body">
+                                        <p>Balykchi fermasida grass carp yetishtiriladi, hosil 18 kg/tonna gacha. Suv tanqisligi muammo, lekin rainwater harvesting yordam beradi (FAO).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                        Qozog'iston va Qirg'izistonda Rainwater Harvesting
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#examplesAccordion">
+                                    <div class="accordion-body">
+                                        <p>Qirg'izistonda fish-and-rice fermalari 33,600 tonna hosil (2023). O'zbekiston uchun model (Hatchery International).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                        Janubiy Koreya: Drip Irrigation Arid Hududlarda
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#examplesAccordion">
+                                    <div class="accordion-body">
+                                        <p>Drip tizimi suvni 90% tejaydi, meva bog'larida qo'llaniladi (OrbitOnline).</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Placeholder for Image -->
+                        <div class="placeholder-img">
+                            <i class="fas fa-image" style="font-size: 2.5rem;"></i> Xalqaro Misollar (O'zingiz joylashtiring)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Xatarlar va Yechimlar Bo'limi -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Mumkin bo'lgan Xatarlar va Yechimlar</h2>
+                    <div class="card">
+                        <div class="long-text">
+                            <ul>
+                                <li><strong>Qurg'oqchilik:</strong> Suv kam bo'lsa, hovuz hajmini kamaytirish. Yechim: Solar nasoslar.</li>
+                                <li><strong>Baliq o'limi:</strong> Suv sifati monitoringi. Yechim: Aeratorlar qo'shish.</li>
+                                <li><strong>Infeksiya:</strong> Tozalash tizimi. Yechim: Kichik filtr havzasi.</li>
+                                <li><strong>Iqtisodiy:</strong> Payback 5 yil. Yechim: Intensiv usullar bilan qisqartirish.</li>
+                            </ul>
+                            <div class="infobox">
+                                <strong>Manba:</strong> O'zbekistonda baliqchilik muammolari (CABAR.asia, 2024).
+                            </div>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Xatar</th>
+                                    <th>Ehtimollik</th>
+                                    <th>Yechim</th>
+                                    <th>Xarajat (UZS)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Qurg'oqchilik</td><td>Yuqori</td><td>Solar nasos</td><td>10,800,000</td></tr>
+                                <tr><td>Baliq o'limi</td><td>O'rtacha</td><td>Aerator</td><td>2,000,000</td></tr>
+                                <tr><td>Infeksiya</td><td>Past</td><td>Filtr</td><td>3,500,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hisob-Kitoblar Bo'limi -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-calculator"></i> Batafsil Hisob-Kitoblar</h2>
+                    <div class="card">
+                        <h3><i class="fas fa-money-bill"></i> CAPEX va OPEX</h3>
+                        <div class="long-text">
+                            <p>Oldingi hisobga qo'shimcha: Suv yig'ish kanali +10 mln UZS. Jami CAPEX 241 mln UZS.</p>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Element</th>
+                                    <th>Hisob</th>
+                                    <th>Jami (UZS)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Drenaj kanali</td><td>1,000 m × 10,000 UZS/m</td><td>10,000,000</td></tr>
+                                <tr><td>Hovuz qazish</td><td>1,800 m³ × 50,000</td><td>90,000,000</td></tr>
+                                <tr><td>Liner</td><td>900 m² × 18,000</td><td>16,200,000</td></tr>
+                                <tr><td>Boshqa</td><td>-</td><td>90,000,000</td></tr>
+                                <tr><td>Jami</td><td>-</td><td>205.000,000</td></tr>
+                            </tbody>
+                        </table>
+                        <h3><i class="fas fa-chart-line"></i> Daromad Prognozi</h3>
+                        <div class="long-text">
+                            <p>Baliq: 45 mln UZS, Suv sotish: 3.5 mln UZS, Sug'orish tejamkorligi: 3 mln UZS. Sof foyda: 50 mln UZS/yil. Payback: 4 yil (200mln sumlik xarajat uchun).</p>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Daromad Manbai</th>
+                                    <th>Miqdor</th>
+                                    <th>Narx</th>
+                                    <th>Jami (UZS)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Baliq sotish</td><td>1,125 kg</td><td>40,000/kg</td><td>45,000,000</td></tr>
+                                <tr><td>Fermer suvi</td><td>700 m³</td><td>2,000/m³</td><td>3.500.000(sug'orish uchun/5000uzs har 1tonna uchun)</td></tr>
+                                <tr><td>Ichimlik suvi</td><td>300 m³</td><td>10,000/m³</td><td>3,000,000</td></tr>
+                                <tr><td>Jami</td><td>-</td><td>-</td><td>51,500,000/yil</td></tr>
+                            </tbody>
+                        </table>
+                        <!-- Placeholder for Image -->
+                        <div class="placeholder-img">
+                            <i class="fas fa-image" style="font-size: 2.5rem;"></i> Hisob Grafiklari (O'zingiz joylashtiring)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Takliflar Bo'limi -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-lightbulb"></i> Takliflar va Kelajak Rejalari</h2>
+                    <div class="card">
+                        <div class="long-text">
+                            <ol>
+                                <li>Pilot loyiha: 5 km Toshkent yaqinida.</li>
+                                <li>Hajm effektlari: 10 km da CAPEX 20% pasayadi.</li>
+                                <li>Hukumat hamkorligi: Byudjet tejash uchun grantlar.</li>
+                                <li>Teknologiya: Solar va smart sensorlar qo'shish.</li>
+                                <li>Monitoring: Yillik hisobotlar.</li>
+                                <li>Kengaytirish: 100 km ga yetkazish, 500 ish o'rni.</li>
+                            </ol>
+                            <div class="infobox">
+                                <strong>Potentsial:</strong> o'zbekistonda Serqatnov va katta Trassalarda loyiha 10 mlrd UZS tejaydi.
+                            </div>
+                        </div>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <div class="stat-number">5 km</div>
+                                <div>Pilot hajm</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">10+</div>
+                                <div>Ish o'rni/km (davlatdan holi, mustaqil biznes egalari)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">10 mlrd UZS/yil</div>
+                                <div>Tejamkorlik</div>
+                            </div>
+                        </div>
+                        <!-- Placeholder for Image -->
+                        <div class="placeholder-img">
+                            <i class="fas fa-image" style="font-size: 2.5rem;"></i> Kelajak Rejalari (O'zingiz joylashtiring)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manbalar Bo'limi -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h2><i class="fas fa-book"></i> Manbalar va Qo'shimcha Ma'lumotlar</h2>
+                    <div class="card">
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="btn btn-primary">UNEP Atlas (2025): Iqlim O'zgarishi O'zbekistonda</a></li>
+                            <li><a href="#" class="btn btn-primary">Trading Economics: Yog'ingarchilik Ma'lumotlari</a></li>
+                            <li><a href="#" class="btn btn-primary">FAO: Baliqchilik O'zbekistonda</a></li>
+                            <li><a href="#" class="btn btn-primary">Daryo.uz: Yo'l Ta'mirlash Xarajatlari</a></li>
+                            <li><a href="#" class="btn btn-primary">Frontiers: Rainwater Harvesting Foydalari</a></li>
+                            <li><a href="#" class="btn btn-primary">SpringerLink: Roads va Suv Yig'ish</a></li>
+                            <li><a href="#" class="btn btn-primary">CABAR.asia: Baliqchilik Muammolari</a></li>
+                            <li><a href="#" class="btn btn-primary">Hatchery International: Qirg'iziston Misollari</a></li>
+                            <li><a href="#" class="btn btn-primary">OrbitOnline: Drip Irrigation</a></li>
+                            <li><a href="#" class="btn btn-primary">ReportLinker: Yo'l Bozor Tahlili</a></li>
+                        </ul>
+                        <div class="long-text mt-4">
+                            <p>Ushbu loyiha 2025 yil noyabr holatiga asoslangan. Qo'shimcha ma'lumotlar uchun murojaat qiling.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Yog'ingarchilik suvlarini yig'ish va Bo'sh ish o'rinlarini yaratish Loyihasi. Barcha huquqlar himoyalangan. <i class="fas fa-envelope"></i> Aloqa: info@project.uz | <i class="fas fa-phone"></i> +998 71 123 45 67</p>
+            <p class="mt-2">Loyiha ishlab chiqaruvchisi: HALLAYM JAMOASI</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Custom JS for animations -->
+    <script>
+        // Simple scroll animation trigger
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    section.classList.add('animate__animated', 'animate__fadeIn');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
